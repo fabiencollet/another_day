@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 35066694}
   m_Layer: 4
   m_Name: Lac (6)
-  m_TagString: Untagged
+  m_TagString: Lac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 942641809}
   m_Layer: 4
   m_Name: Lac (5)
-  m_TagString: Untagged
+  m_TagString: Lac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1103083943}
   m_Layer: 4
   m_Name: Lac (2)
-  m_TagString: Untagged
+  m_TagString: Lac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 1187860365}
   m_Layer: 4
   m_Name: Lac (3)
-  m_TagString: Untagged
+  m_TagString: Lac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 1273167622}
   m_Layer: 4
   m_Name: Lac (4)
-  m_TagString: Untagged
+  m_TagString: Lac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1314,7 +1314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2118895983}
-  grounded: 0
 --- !u!1 &2025296857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1428,7 @@ GameObject:
   - component: {fileID: 2118895989}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,11 +1463,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2118895982}
   Player: {fileID: 2118895987}
-  playerCollision: {fileID: 0}
   forwardForce: 50
   sidewaysForce: 50
   jumpForce: 2000
   accelerationValue: 3000
+  grounded: 0
 --- !u!136 &2118895984
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1574,7 +1573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2118895983}
-  grounded: 1
 --- !u!1001 &6659426617113185040
 PrefabInstance:
   m_ObjectHideFlags: 0
