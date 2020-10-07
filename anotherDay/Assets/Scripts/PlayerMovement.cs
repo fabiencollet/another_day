@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     //reference to the direction
     public float forwardForce = 2000f;
     public float sidewaysForce = 2000f;
-    public float ratio = 1.5f;
+    public float ratio = 2f;
     public float jumpForce = 30f;
     public int accelerationValue = 3000;
     public bool grounded = true;
+
+
 
     // Update is called once per frame
 

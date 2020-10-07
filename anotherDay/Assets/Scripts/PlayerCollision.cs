@@ -10,7 +10,8 @@ public class PlayerCollision : MonoBehaviour
         {
             movement.grounded = true;
             Debug.Log("Player is Grounded, grounded == true");
-        }  
+        }
+
     }
         
 }
