@@ -33,8 +33,9 @@ public class ToolsMovement : MonoBehaviour
 
         }
         //throw tools equipped
-        if (Input.GetKey(KeyCode.E) && equipped)
+        if (equipped && Input.GetKey(KeyCode.G))
         {
+            rbTools.constraints = RigidbodyConstraints.None;
             rbTools.AddForce(new Vector3(0, 1, 1),ForceMode.Impulse);
             grabbed = false;
             equipped = false;

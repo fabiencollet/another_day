@@ -8,6 +8,7 @@ TagManager:
   - Lac
   - Floor
   - Tools
+  - Slots
   layers:
   - Default
   - TransparentFX
