@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEditorInternal.VersionControl;
 using UnityEngine;
 
-public class InventorySlots : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     private List<Items> itemList;
 
-    public InventorySlots()      
+    public Inventory()      
     {
         itemList = new List<Items>();
 
@@ -17,10 +17,4 @@ public class InventorySlots : MonoBehaviour
         itemList.Add(items);
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
