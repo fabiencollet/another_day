@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using UnityEngine;
 
-public class ToolsMovement : MonoBehaviour
+public class Tools_Movement : MonoBehaviour
 {
     public Rigidbody rbTools;
     

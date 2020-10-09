@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerCollision : MonoBehaviour
+public class Player_Collision : MonoBehaviour
 {
-    public PlayerMovement movement;
+    public Character movement;
  
     void OnCollisionEnter(Collision collisionInfo)
     {

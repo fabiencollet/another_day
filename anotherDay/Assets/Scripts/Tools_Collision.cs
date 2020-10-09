@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class ToolsCollision : MonoBehaviour
+public class Tools_Collision : MonoBehaviour
 {
-    public ToolsMovement toolsMovement;
+    public Tools_Movement toolsMovement;
 
     // Update is called once per frame
     void OnCollisionEnter(Collision collisionInfo)

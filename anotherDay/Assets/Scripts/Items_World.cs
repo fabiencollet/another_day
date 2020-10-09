@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ItemsWorld : MonoBehaviour
+public class Items_World : MonoBehaviour
 {
     // Start is called before the first frame update
     /*public static ItemsWorld SpawnItemWorld(Items items)
