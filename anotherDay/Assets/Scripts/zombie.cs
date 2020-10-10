@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class zombie : MonoBehaviour
+public class Zombie : MonoBehaviour
 {
 
     public Transform PosJoueur;

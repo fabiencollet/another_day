@@ -1,39 +1,55 @@
 ﻿using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Character : MonoBehaviour
 {
     //reference to the rigidbody component "rb"
     public Rigidbody rb;
     public Transform Player;
-
+    /*
     //reference to the direction
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 2000f;
-    public float ratio = 1.5f;
+    // f for float
+    public float forwardForce = 50f; 
+    public float sidewaysForce = 50f;
+    public float ratio = 2f;
     public float jumpForce = 30f;
     public int accelerationValue = 3000;
+    */
+    // character on the ground is true refer to Player_Colllision
     public bool grounded = true;
 
-    // Update is called once per frame
-
-    //Update() is called once per frame while FixedUpdate() can be multiple time
-    //Udpate() is for Input, FixedUpdate() is for Physics
 
     private void Start()
     {
         //assigne the rigid body
         rb = GetComponent<Rigidbody>();
     }
-    void Update()
+
+
+    //Update() is called once per frame while FixedUpdate() can be multiple time
+    //Udpate() is for Input, FixedUpdate() is for Physics
+    private void Update()
     {
-        //Menu
+    // Input
+    }
+    void FixedUpdate()
+    {
+        // Movement
+
+        //Input in certain direction
+        //Value between -1 and 1 = Horizontal Input
+        Input.GetAxisRaw("Horizontal");
+     /*
+        //Menu of actions
         Move();
         Jump();
         Accelerate();
+     */
     }
 
+    /*
     private void Move()
     {
+        
         //simplify lisibility
         float value_sideForce = sidewaysForce * Time.deltaTime;
         float value_forwardForce = forwardForce * Time.deltaTime;
@@ -42,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(value_sideForce, 0, 0, ForceMode.VelocityChange);
+
         }
         else if (Input.GetKey(KeyCode.W))
         {
@@ -97,5 +114,5 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, 0, accelerationValue * Time.deltaTime));
         }
-    }
+    }*/
 }
