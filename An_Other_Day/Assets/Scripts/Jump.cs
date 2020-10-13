@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour
     private Rigidbody _rigidbody;
 
     [SerializeField] private float _jumpForce = 300f;
-    private bool _shouldJump = true;
+    private bool _shouldJump = false;
 
     private void Awake()
     {
@@ -18,13 +18,13 @@ public class Jump : MonoBehaviour
     void Update()
     {
         if (_shouldJump == false)
-            _shouldJump = Input.GetButton("Jump");
+            _shouldJump = Input.GetKey(KeyCode.Space);
     }
     //act on FixedUpdate
     //can miss an input if not update each frame
     void FixedUpdate()
     {
-        if (Input.GetButton("Jump")&&_shouldJump)
+        if (Input.GetKey(KeyCode.Space)&&_shouldJump)
         {
             _rigidbody.AddForce(_jumpForce * Vector3.up);
             _shouldJump = false;
