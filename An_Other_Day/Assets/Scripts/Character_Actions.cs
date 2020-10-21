@@ -3,14 +3,13 @@
 public class Character_Actions : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 10f;
-    [SerializeField] private float _jumpForce = 300f;
-    public bool _grounded = false;
     
-    Rigidbody rb;
+    
+    
     // Update is called once per frame
     void Update()
     {
-        Simple_Movement();                 
+        Simple_Movement();
     }
 
     void Simple_Movement()
@@ -25,4 +24,5 @@ public class Character_Actions : MonoBehaviour
             transform.position += Time.deltaTime * _moveSpeed * transform.right;
 
     }
+
 }

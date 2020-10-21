@@ -9,7 +9,7 @@ TagManager:
   - Stone
   - Lake
   - Zombie
-  - Tool
+  - Weapon
   layers:
   - Default
   - TransparentFX
