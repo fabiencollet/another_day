@@ -2,7 +2,8 @@
 
 public class Gun_Script : MonoBehaviour
 {
-    
+    public ParticleSystem Gun_Particle;
+
     [SerializeField] private float _damage = 10f;
     [SerializeField] private float _range = 100f;
     
@@ -11,7 +12,6 @@ public class Gun_Script : MonoBehaviour
     public bool equipped = false;
     public bool grabbed = false;
 
-    public Transform body;
     private void Start()
     {
        
@@ -20,7 +20,12 @@ public class Gun_Script : MonoBehaviour
     void Update()
     {
         Equip_Throw();
-        Shoot();
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        { 
+            Shoot();
+            Gun_Particle.Play();
+            Debug.Log("Je tire");
+        }
     }
 
     void Shoot()

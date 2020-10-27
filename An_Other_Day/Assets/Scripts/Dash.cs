@@ -2,38 +2,72 @@
 
 public class Dash : MonoBehaviour
 {
+    public ParticleSystem dashParticle;
 
-    private Rigidbody _rigidbody;
+    public bool isDashing;
+    [SerializeField] private float _dashForce = 30f;
+    private int dashAttempts;
+    private float dashStartTime;
 
-    [SerializeField] private float _dashForce = 10f;
-    private bool _shouldDash = false;
+    Character_Actions character_Actions;
 
-    private void Awake()
+    void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        character_Actions = GetComponent<Character_Actions>();
+   
     }
 
-    // Update is called once per frame
-    //read input in update
+
     void Update()
     {
-        if (_shouldDash == false)
-            _shouldDash = Input.GetKey(KeyCode.LeftShift);
+        HandleDash();
     }
-    //act on FixedUpdate
-    //can miss an input if not update each frame
-    void FixedUpdate()
+
+    void HandleDash()
     {
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         Vector3 newPosition = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        bool isTryingToDash = Input.GetKeyDown(KeyCode.Space);
 
-        if (Input.GetKey(KeyCode.LeftShift) && _shouldDash)
+        if (isTryingToDash && !isDashing)
         {
-            _rigidbody.AddForce(_dashForce * newPosition);
-            _shouldDash = false;
+            if(dashAttempts <= 50)
+            {
+                OnStartDash();
+            }
+        }
+
+        if(isDashing)
+        {
+            if (Time.time - dashStartTime <= 0.4f)
+            {
+                if(character_Actions.movementVector.Equals(Vector3.zero))
+                {
+                    //Player is not giving any input
+                    transform.position += transform.up * _dashForce * Time.deltaTime;
+                }
+                else
+                {
+                    transform.position += character_Actions.movementVector.normalized * _dashForce * Time.deltaTime;
+                }                
+            }
+            else
+                OnEndDash();
         }
     }
 
+    void OnStartDash()
+    {
+        isDashing = true;
+        dashStartTime = Time.time;
+        dashAttempts = 1;
+        dashParticle.Play();
+    }
+    void OnEndDash()
+    {
+        isDashing = false;
+        dashStartTime = 0;
+    }
 }
