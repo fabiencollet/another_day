@@ -3,6 +3,7 @@
 public class Gun_Script : MonoBehaviour
 {
     public ParticleSystem Gun_Particle;
+    
 
     [SerializeField] private float _damage = 10f;
     [SerializeField] private float _range = 100f;
@@ -30,10 +31,20 @@ public class Gun_Script : MonoBehaviour
 
     void Shoot()
     {
+        Vector3 mouse = Input.mousePosition;
+        Ray castPoint = Camera.main.ScreenPointToRay(mouse);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, _range))
+        if (Physics.Raycast(castPoint, out hit, _range))
         {
+
             Debug.Log(hit.transform.name);
+
+            Target target = hit.transform.GetComponent<Target>();
+            if(target != null)
+            {
+                target.TakeDamage(_damage);
+                
+            }
         }
     }
     void Equip_Throw()

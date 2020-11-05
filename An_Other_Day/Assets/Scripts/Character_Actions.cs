@@ -7,6 +7,7 @@ public class Character_Actions : MonoBehaviour
     public Vector3 movementVector = Vector3.zero;
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _runSpeed = 5f;
+    [SerializeField] private Vector3 _runScale = new Vector3(1,1,1);
     public bool isRunning = false;
  
 
@@ -43,12 +44,13 @@ public class Character_Actions : MonoBehaviour
         if (isRunning)
         {
             transform.position += Time.deltaTime * newPosition * _runSpeed;
-
+            transform.localScale = _runScale;
         }
         if (!isTryingToRun)
         {
             OnRunEnd();
             isRunning = false;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         
     }
